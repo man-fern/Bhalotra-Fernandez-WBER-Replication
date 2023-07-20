@@ -1,9 +1,9 @@
-# The Rise in Women's Labor Force Participation in Mexico- Supply vs Demand Factors
+# [The Rise in Women's Labor Force Participation in Mexico- Supply vs Demand Factors](https://man-fern.github.io/files/Bhalotra-Fernandez-Mexico-FLFP-supply-demand.pdf)
 
 ## Authors
 
-* Sonia Bhalotra, University of Warwick
-* Manuel Fernández, Universidad de los Andes
+* [Sonia Bhalotra](https://sites.google.com/site/srbhalotra/), University of Warwick
+* [Manuel Fernández](https://man-fern.github.io/), Universidad de los Andes
 
 ## Replication Instructions
 
@@ -14,9 +14,9 @@ To run the code, you will need to have the following software and packages insta
 * Stata (version 16 or later)
   * Additional packages: *shp2dta*, *spmap*, *estout*, *reghdfe*, *oaxaca*
 
-## Steps to Replicate
+### Steps to Replicate
 
-**Step 1**: Run the '*p0a-shape-maps.do*' Stata do-file to generate shape files in DTA format.
+**Step 1**: Run the ['*p0a-shape-maps.do*'](https://github.com/man-fern/Bhalotra-Fernandez-WBER-Replication/blob/main/Code/p0a-shape-maps.do) Stata do-file to generate shape files in DTA format.
 
 * **Inputs:** 
     * DS1: SHP file '*geo2_mx1960_2015.shp*'
@@ -28,7 +28,7 @@ To run the code, you will need to have the following software and packages insta
 
 * **Source:** The SHP and DBF files are provided by [IPUMS-International-gis](https://international.ipums.org/international/gis.shtml). They include the second-level subnational administrative units in Mexico, known as 'municipios,' in which the household was enumerated. The information is harmonized by IPUMS. 
 
-**Step 2**: Run the '*p1-import-clean-data.do*' Stata do-file to clean the original IPUMS Mexican Census database, construct variables of interest, and save the main database in DTA format. The script merges the '*IPUMS-original.dta*' database with '*mexico_db2.dta*' created in Step 1 and with '*crosswalk_geo2_mx_cz.dta*'. The latter is taken from Faber, M. (2020) and contains a crosswalk between municipalities and commuting zones. 
+**Step 2**: Run the ['*p1-import-clean-data.do*'](https://github.com/man-fern/Bhalotra-Fernandez-WBER-Replication/blob/main/Code/p1-import-clean-data.do) Stata do-file to clean the original IPUMS Mexican Census database, construct variables of interest, and save the main database in DTA format. The script merges the '*IPUMS-original.dta*' database with '*mexico_db2.dta*' created in Step 1 and with '*crosswalk_geo2_mx_cz.dta*'. The latter is taken from [Faber (2020)](https://www.sciencedirect.com/science/article/abs/pii/S0022199620300994?via%3Dihub) and contains a crosswalk between municipalities and commuting zones. 
 
 * **Inputs:** 
     * DS6: Data file '*IPUMS-original.dta*' 
@@ -37,10 +37,10 @@ To run the code, you will need to have the following software and packages insta
 * **Outputs:** 
     * DS8: Data file '*Main.dta*' 
 
-* **Source:** The '*IPUMS-original.dta*' contains a subset of variables from the 1960, 1970, 1990, 2000, 2010, and 2015 Mexican Census samples provided by [IPUMS-International](https://international.ipums.org/international/). The '*crosswalk_geo2_mx_cz.dta*' comes from the replication files of Faber (2020).
+* **Source:** The '*IPUMS-original.dta*' contains a subset of variables from the 1960, 1970, 1990, 2000, 2010, and 2015 Mexican Census samples provided by [IPUMS-International](https://international.ipums.org/international/). The '*crosswalk_geo2_mx_cz.dta*' comes from the replication files of [Faber (2020)](https://data.mendeley.com/datasets/9f59b854p6/1).
 
 
-**Step 3**: Run the 'p2-tables-figures.do' Stata do-file to create the figures and maps displayed in the paper.
+**Step 3**: Run the ['p2-tables-figures.do'](https://github.com/man-fern/Bhalotra-Fernandez-WBER-Replication/blob/main/Code/p2-tables-figures.do) Stata do-file to create the figures and maps displayed in the paper.
 
 * **Inputs:** 
     * DS8: Data file '*Main.dta*'
@@ -51,7 +51,7 @@ To run the code, you will need to have the following software and packages insta
 * **Notes:** The do-file is divided into ten sections, each corresponding to one of the figures in the paper. The sections can be executed independently.
 
 
-**Step 4**: Run the '*p3-lpm-oaxaca-blinder.do*' Stata do-file to estimate the linear probability models relating labor force participation to observable characteristics. The second part of the do-file estimates the Oaxaca-Blinder decomposition.
+**Step 4**: Run the ['*p3-lpm-oaxaca-blinder.do*'](https://github.com/man-fern/Bhalotra-Fernandez-WBER-Replication/blob/main/Code/p3-lpm-oaxaca-blinder.do) Stata do-file to estimate the linear probability models relating labor force participation to observable characteristics. The second part of the do-file estimates the Oaxaca-Blinder decomposition.
 
 * **Inputs:** 
     * DS8: Data file '*Main.dta*'
@@ -61,7 +61,7 @@ To run the code, you will need to have the following software and packages insta
 * **Notes:** The do-file is divided into two sections, each corresponding to Table 1 or 2 of the paper. The sections can be executed independently.
 
 
-**Step 5** Run the '*p4a-shift-share-var.do*' Stata do-file to create the shift-share variables for occupations and sectors.
+**Step 5** Run the ['*p4a-shift-share-var.do*'](https://github.com/man-fern/Bhalotra-Fernandez-WBER-Replication/blob/main/Code/p4a-shift-share-var.do) Stata do-file to create the shift-share variables for occupations and sectors.
 
 * **Inputs:** 
     * DS8: Data file '*Main.dta*'
@@ -73,7 +73,7 @@ To run the code, you will need to have the following software and packages insta
 * **Notes:** The do-file is divided into three sections. The first section creates the shift-share variable associated with occupations at the CZ level, saving the result in the '*BartikOcc.dta*'. The second section creates the shift-share variables associated with sectors at the CZ level, saving the result in the '*BartikSec.dta*'. The last section collapses the '*Main.dta*' dataset at the commuting zone*census year level, constructs the relevant variables for the analysis, and merges the resulting database with '*BartikOcc.dta*' and '*BartikFull.dta*'.
 
 
-**Step 6** Run the '*p4b-shift-share-estimate.do*' Stata do-file to estimate the shift-share regressions.
+**Step 6** Run the ['*p4b-shift-share-estimate.do*'](https://github.com/man-fern/Bhalotra-Fernandez-WBER-Replication/blob/main/Code/p4b-shift-share-estimate.do) Stata do-file to estimate the shift-share regressions.
 
 * **Inputs:** 
     * DS11: Data file '*BartikFull.dta*'
