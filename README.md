@@ -80,4 +80,4 @@ To run the code, you will need to have the following software and packages insta
 * **Outputs:** 
     * Tables 3 and 4 in the paper
 
-* **Notes:** The do-file is divided into 2 three sections. The first section estimates the shift-share regressions. The second section does the demand-side decomposition analysis.
+* **Notes:** The do-file is divided into two sections. The first section estimates the shift-share regressions. The second section does the demand-side decomposition analysis.
