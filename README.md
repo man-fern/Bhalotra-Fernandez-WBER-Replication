@@ -51,7 +51,7 @@ To run the code, you will need to have the following software and packages insta
 * **Notes:** The do-file is divided into ten sections, each corresponding to one of the figures in the paper. The sections can be executed independently.
 
 
-**Step 4**: Run the '*p3-lpm-oaxaca-blinder*' Stata do-file to estimate the linear probability models relating labor force participation to observable characteristics. The second part of the do-file estimates the Oaxaca-Blinder decomposition.
+**Step 4**: Run the '*p3-lpm-oaxaca-blinder.do*' Stata do-file to estimate the linear probability models relating labor force participation to observable characteristics. The second part of the do-file estimates the Oaxaca-Blinder decomposition.
 
 * **Inputs:** 
     * DS8: Data file '*Main.dta*'
@@ -61,7 +61,7 @@ To run the code, you will need to have the following software and packages insta
 * **Notes:** The do-file is divided into two sections, each corresponding to Table 1 or 2 of the paper. The sections can be executed independently.
 
 
-**Step 5** Run the '*p4a-shift-share-var*' Stata do-file to create the shift-share variables for occupations and sectors.
+**Step 5** Run the '*p4a-shift-share-var.do*' Stata do-file to create the shift-share variables for occupations and sectors.
 
 * **Inputs:** 
     * DS8: Data file '*Main.dta*'
@@ -73,7 +73,7 @@ To run the code, you will need to have the following software and packages insta
 * **Notes:** The do-file is divided into three sections. The first section creates the shift-share variable associated with occupations at the CZ level, saving the result in the '*BartikOcc.dta*'. The second section creates the shift-share variables associated with sectors at the CZ level, saving the result in the '*BartikSec.dta*'. The last section collapses the '*Main.dta*' dataset at the commuting zone*census year level, constructs the relevant variables for the analysis, and merges the resulting database with '*BartikOcc.dta*' and '*BartikFull.dta*'.
 
 
-**Step 6** Run the '*p4b-shift-share-estimate*' Stata do-file to estimate the shift-share regressions.
+**Step 6** Run the '*p4b-shift-share-estimate.do*' Stata do-file to estimate the shift-share regressions.
 
 * **Inputs:** 
     * DS11: Data file '*BartikFull.dta*'
