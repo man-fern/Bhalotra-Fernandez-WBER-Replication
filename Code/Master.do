@@ -5,8 +5,6 @@
 
 *SPECIFY LOCAL ENVIROMENT
 *global LOCALD "...\Replication-folder"
-*global LOCALD "D:\Users\manue\Dropbox\AA_Andes\Research\Mexico_FLFP\Submission-WBER\Replication-folder"
-global LOCALD "C:\Users\man-fern\Dropbox\AA_Andes\Research\Mexico_FLFP\Submission-WBER\Replication-folder"
 
 *STEP 1.
 run "$LOCALD\Code\p0a-shape-maps.do"
